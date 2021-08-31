@@ -6,7 +6,7 @@ import com.jincan.www.util.EnvUtil
 	* @Author: Larkin
 	* @Date: 2021/8/31 9:51
 	*/
-object hiveDemo {
+object hiveTimeAndDateDemo {
 	def main(args: Array[String]): Unit = {
 		val spark =EnvUtil.getSparkSession
 		spark.sql(
@@ -21,7 +21,7 @@ object hiveDemo {
 		* */
 		spark.sql(
 			"""
-				|select now(),current_date,date_add(current_date(), 1),date_sub(current_date(), 5)
+				|select now(),current_date,date_add(current_date(), 1),date_sub(current_date(), 5),from_utc_timestamp(current_date(), 'Asia/Seoul')
 			""".stripMargin).show(truncate = false)
 	}
 }
