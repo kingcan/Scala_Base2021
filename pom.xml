@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jincan</groupId>
+    <artifactId>Scala_Base2021</artifactId>
+    <packaging>pom</packaging>
+    <version>V20210831</version>
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+        <repository>
+            <id>maven - ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <modules>
+        <module>SparkDemo</module>
+    </modules>
+    <properties>
+        <protobuf-java>2.5.0</protobuf-java>
+        <hadoop.version>3.0.0-cdh6.3.2</hadoop.version>
+        <mysql-version>5.1.49</mysql-version>
+        <hive.version>2.1.1-cdh6.3.2</hive.version>
+        <hbase.version>2.1.0-cdh6.3.2</hbase.version>
+        <scala.version>2.11.12</scala.version>
+        <spark.version>2.4.0-cdh6.3.2</spark.version>
+        <sqoop.version>1.4.7</sqoop.version>
+    </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <!--包含文件夹以及子文件夹下所有资源-->
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
